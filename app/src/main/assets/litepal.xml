@@ -4,9 +4,9 @@
     <version value="1" />
 
     <list>
-        <mipping class="com.water.waterweather.db.Province" />
-        <mipping class="com.water.waterweather.db.City" />
-        <mipping class="com.water.waterweather.db.County" />
+        <mapping class="com.water.waterweather.db.Province" />
+        <mapping class="com.water.waterweather.db.City" />
+        <mapping class="com.water.waterweather.db.County" />
     </list>
 
 
