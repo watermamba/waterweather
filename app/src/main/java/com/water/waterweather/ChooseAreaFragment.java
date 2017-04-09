@@ -2,6 +2,7 @@ package com.water.waterweather;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import com.water.waterweather.db.City;
 import com.water.waterweather.db.County;
 import com.water.waterweather.db.Province;
+import com.water.waterweather.gson.Weather;
 import com.water.waterweather.util.HttpUtil;
 import com.water.waterweather.util.Utility;
 
@@ -110,6 +112,12 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(position);
                     queryCounties();
+                } else if (currentLevel == LEVEL_COUNTY) {
+                    String weatherId = countyList.get(position).getWeatherId();
+                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                    intent.putExtra("weather_id", weatherId);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
